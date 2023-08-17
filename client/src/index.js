@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Loginpage from './modules/auth/Loginpage';
 import "./modules/css/globle.css";
 import Registorpage from './modules/auth/Registorpage';
+import Landingpage from './modules/dashboard/Landingpage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +16,7 @@ root.render(
         <Routes>
           <Route path='/' element={<Loginpage/>}/>
           <Route path='registor' element={<Registorpage/>}/>
+          <Route path='landing' element={<Landingpage/>}/>
         </Routes>
 
 

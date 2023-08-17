@@ -22,7 +22,8 @@ function Loginpage() {
         Remember me
       </label>
     </div>
-    <button className="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    {/* <button className="btn btn-primary w-100 py-2" type="submit">Sign in</button> */}
+    <Link  to="landing" className='btn btn-success'>user registor</Link>
     <Link  to="registor" className='text-underline'>user registor</Link>
   </form>
 </main>
