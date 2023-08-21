@@ -1,13 +1,16 @@
-const express =require('express');
-const apps = express();
+const express = require('express');
 require('dotenv').config();
-let port = process.env.port || 8080;
 
-apps.get('/',(req,res)=>{
-    res.send("<h1>this is use express jseeeeeeeeeeeeeeeeeeeee </h1>")
+
+const apps = express();
+
+let port  = process.env.port || 6800
+
+apps.get("/",(req,res)=>{
+    res.send("welcome to express");
 })
 
 
 apps.listen(port,()=>{
-    console.log(`you application is running at ${port}`);
+    console.log(`server is running at port no ${port}`);
 })

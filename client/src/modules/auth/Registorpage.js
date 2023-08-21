@@ -21,8 +21,13 @@ export default function Registorpage() {
         })
       }
       const mysubmit = ()=>{
-
+        if(sv.fullname=="" || sv.email=="" || sv.comment=="")
+        {
+            alert("fill form properly");
+        }
+        else{
         console.log(sv);
+        }
       }
 
 
@@ -38,15 +43,15 @@ export default function Registorpage() {
             </div>
             <div className='row'>
                 <div className='col-md-6 mt-3'>
-                    <input type="text" class="form-control" placeholder='fullname' name='fullname' onInput={setdata}/>
+                    <input type="text" className="form-control" placeholder='fullname' name='fullname' onInput={setdata}/>
                 </div>
 
                 <div className='col-md-6 mt-3'>
-                    <input type="email" class="form-control" placeholder='email' name='email' onInput={setdata}/>
+                    <input type="email" className="form-control" placeholder='email' name='email' onInput={setdata}/>
                 </div>
 
                 <div className='col-md-6 mt-3'>
-                    <input type="text" class="form-control" placeholder='phone' name='phone' onInput={setdata}/>
+                    <input type="text" className="form-control" placeholder='phone' name='phone' onInput={setdata}/>
                 </div>
 
                 <div className='col-md-6 mt-3'>
@@ -62,7 +67,7 @@ export default function Registorpage() {
                 </div>
 
                 <div className='col-md-12 mt-3'>
-                    <textarea className='form-control' value="type text" name='comment' onInput={setdata}></textarea>
+                    <textarea className='form-control' placeholder='enter comment' name='comment' onChange={setdata}></textarea>
                 </div>
 
                 <div className='col-md-12 mt-3 text-center'>

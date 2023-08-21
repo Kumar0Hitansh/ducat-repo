@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Mynav from '../shares/Mynav'
 
 function Landingpage() {
     return (
-        <div className='container'>
+        <Fragment>
+        <Mynav/>
+        <div className='container cus-mt'>
             <div className='row'>
                 <div className='col-12'>
                     <p>Home page / landing page</p>
@@ -50,6 +53,7 @@ function Landingpage() {
 
             </div>
         </div>
+        </Fragment>
     )
 }
 
