@@ -21,4 +21,38 @@ backend
 	2) use
 7) cors
 	1) npm install cors
-	2) use
+	2) use(cors());
+-------------------------------------------------------
+8) create "routes/route.js"
+		const express = require('express');
+		const route = express.Router();
+
+		module.exports=route
+9) route use
+	const route = require('./routes/route');
+	app.use(route);
+
+10) create "db/connec.js"
+	const mongoose = require('mongoose');
+	const db = "dblocation url";
+	mongoose.connect(db,{
+    		useNewUrlParser: true,
+    		useUnifiedTopology: true
+		}).then(()=>console.log("connection start"))
+		  .catch((error)=> console.log(error.message));
+11) required on server file
+	require('./db/connect');
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
