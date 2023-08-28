@@ -1,7 +1,21 @@
-import React, { Fragment } from 'react'
-import Mynav from '../shares/Mynav'
+import React, { Fragment, useEffect, useState } from 'react'
+import Mynav from '../shares/Mynav';
+import axios from 'axios';
 
 function Landingpage() {
+    const [sv,sf]=useState([])
+
+
+const Mygetapi = ()=>{   
+        axios.get('http://localhost:8080/alldata').then((e)=>{
+            console.log(e.data);
+            sf(e.data);
+        })
+    }
+useEffect(()=>{
+    Mygetapi();
+},[])
+
     return (
         <Fragment>
         <Mynav/>
@@ -51,6 +65,15 @@ function Landingpage() {
                 </section>
                 
 
+            </div>
+            <div className='row'>
+                <div className='col-12'>
+                    {sv.map((d)=>{
+                        return(
+                            <h1>{d.Item}</h1>
+                        )
+                    })}
+                </div>
             </div>
         </div>
         </Fragment>
