@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
-import {Link} from 'react-router-dom'; 
 
 export default function Registorpage() {
+
     const [sv,sf]= useState({
         fullname:"",
         phone:"",
@@ -20,17 +20,28 @@ export default function Registorpage() {
           }
         })
       }
-      const mysubmit = ()=>{
-        if(sv.fullname=="" || sv.email=="" || sv.comment=="")
+      const mysubmit = async (e)=>{
+        e.preventDefault();
+        if(sv.fullname==="" || sv.email==="" || sv.comment==="")
         {
             alert("fill form properly");
         }
         else{
-        console.log(sv);
+       
+        const { fullname, email, phone, comment, gender } = sv;
+        const res = await fetch("http://localhost:8080/create", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                fullname, email, phone, comment, gender
+            })
+        })
+        const data = await res.json();
+        console.log(data);
         }
       }
 
-
+      
 
 
     return (

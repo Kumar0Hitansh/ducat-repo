@@ -70,7 +70,7 @@ useEffect(()=>{
                 <div className='col-12'>
                     {sv.map((d)=>{
                         return(
-                            <h1>{d.Item}</h1>
+                            <h1>{d.fullname}</h1>
                         )
                     })}
                 </div>

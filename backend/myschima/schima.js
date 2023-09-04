@@ -1,15 +1,24 @@
 const mongoose = require('mongoose');
 
 const datapattern = new mongoose.Schema({
-    name:{
+    fullname:{
         type:String
     },
-    age:{
-        type:Number
-    }
+    email:{
+        type:String
+    },
+    phone:{
+        type:String
+    },
+    gender:{
+        type:String
+    },
+    comment:{
+        type:String
+    },
 });
 
-const mymodal = new mongoose.model("mean45",datapattern);
+const mymodal = new mongoose.model("mern45",datapattern);
 module.exports = mymodal;
 
 

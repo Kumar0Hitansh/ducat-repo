@@ -17,4 +17,21 @@ route.get("/alldata",async(req,res)=>{
 });
 
 
+// post / create  api
+route.post("/create",async(req,res)=>{
+    const {fullname,email,phone,comment,gender} = req.body;
+    const adduser = new mymodal({
+        fullname,email,phone,comment,gender
+    });
+    await adduser.save();
+    res.status(201).json(adduser);
+    console.log(adduser);
+});
+
+
+
+
+
+
+
 module.exports=route
