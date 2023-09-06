@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Registorpage() {
 
@@ -21,7 +22,7 @@ export default function Registorpage() {
         })
       }
       const mysubmit = async (e)=>{
-        e.preventDefault();
+        // e.preventDefault();
         if(sv.fullname==="" || sv.email==="" || sv.comment==="")
         {
             alert("fill form properly");
@@ -43,9 +44,8 @@ export default function Registorpage() {
 
       
 
-
     return (
-
+        <form>
         <div className='container mt-5 border shadow p-5 cus-w'>
             <div className='row'>
                 <div className='col-12 text-center'>
@@ -83,10 +83,11 @@ export default function Registorpage() {
 
                 <div className='col-md-12 mt-3 text-center'>
                     <input type='button' value="register" className='btn btn-success'  onClick={mysubmit}/>
-                    {/* <Link to="/" className='btn btn-success'>register</Link> */}
+                    <Link to="/" className='btn btn-success ms-2'>login</Link>
                     <input type='reset' value="cancel" className='btn btn-danger ms-5' />
                 </div>
             </div>
             </div>
+            </form>
             )
 }

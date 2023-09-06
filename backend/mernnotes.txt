@@ -43,6 +43,8 @@ backend
 11) required on server file
 	require('./db/connect');
 --------------------------------------------------------------
+12) create get api and data binding in react
+
 
 	
 

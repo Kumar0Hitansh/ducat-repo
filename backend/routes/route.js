@@ -28,6 +28,13 @@ route.post("/create",async(req,res)=>{
     console.log(adduser);
 });
 
+// delete api
+route.delete("/deleterecord/:id",async(req,res)=>{
+    const {id} = req.params;
+    const a = await mymodal.findByIdAndDelete({_id:id})
+    console.log(a);
+    res.status(201).json(a);
+});
 
 
 
