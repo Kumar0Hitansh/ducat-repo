@@ -1,11 +1,10 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import Mynav from '../shares/Mynav';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Landingpage() {
     const [sv, sf] = useState([])
-
-
     const Mygetapi = () => {
         axios.get('http://localhost:8080/alldata').then((e) => {
             console.log(e.data);
@@ -106,7 +105,7 @@ const Mydeleterecord = async(id)=>{
                                             <td>{d.email}</td>
                                             <td>{d.comment}</td>
                                             <td>
-                                                <button className='btn btn-sm btn-info me-2'>view</button>
+                                                <Link className='btn btn-sm btn-info me-2' to={`/view/${d._id}`}>view</Link>
                                                 <button className='btn btn-sm btn-warning me-2'>Edit</button>
                                                 <button className='btn btn-sm btn-danger' onClick={()=>{Mydeleterecord(d._id)}}>Del</button>
                                             </td>

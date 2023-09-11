@@ -17,6 +17,8 @@ route.get("/alldata",async(req,res)=>{
 });
 
 
+
+
 // post / create  api
 route.post("/create",async(req,res)=>{
     const {fullname,email,phone,comment,gender} = req.body;
@@ -36,7 +38,14 @@ route.delete("/deleterecord/:id",async(req,res)=>{
     res.status(201).json(a);
 });
 
-
+// get single data api
+route.get("/view/:id",async(req,res)=>{
+    console.log(req.params);
+    const {id} = req.params;
+    const singleuser = await mymodal.findById({_id:id});
+    console.log(singleuser);
+    res.status(201).json(singleuser);
+});
 
 
 
