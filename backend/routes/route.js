@@ -48,6 +48,16 @@ route.get("/view/:id",async(req,res)=>{
 });
 
 
+// update api
+route.patch("/updaterecord/:id",async(req,res)=>{
+    const {id} = req.params;
+    const recordupdate = await mymodal.findByIdAndUpdate(id,req.body,{new:true});
+    console.log(recordupdate);
+    res.status(201).json(recordupdate);
+});
+
+
+
 
 
 module.exports=route

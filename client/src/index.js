@@ -8,6 +8,7 @@ import "./modules/css/globle.css";
 import Registorpage from './modules/auth/Registorpage';
 import Landingpage from './modules/dashboard/Landingpage';
 import Detailsuser from './modules/dashboard/Detailsuser';
+import Editrecord from './modules/dashboard/Editrecord';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +20,7 @@ root.render(
           <Route path='registor' element={<Registorpage/>}/>
           <Route path='landing' element={<Landingpage/>}/>
           <Route path='view/:id' element={<Detailsuser/>}/>
+          <Route path='edit/:id' element={<Editrecord/>}/>
         </Routes>
 
 

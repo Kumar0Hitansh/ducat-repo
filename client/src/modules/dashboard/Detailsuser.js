@@ -12,9 +12,11 @@ function Detailsuser() {
             singupdate(e.data);
         })
     }
+
     useEffect(() => {
         Mygetapi();
     }, []);
+    
   return (
     <div className='container bg-light border shadow'>
         <div className='row bg-primary p-3'>

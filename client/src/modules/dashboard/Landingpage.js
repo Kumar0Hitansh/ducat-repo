@@ -90,7 +90,7 @@ const Mydeleterecord = async(id)=>{
                                     <th scope="col">Phone no</th>
                                     <th scope="col">Gender</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Comments</th>
+                                    <th scope="col" width="300">Comments</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -103,10 +103,10 @@ const Mydeleterecord = async(id)=>{
                                             <td>{d.phone}</td>
                                             <td>{d.gender}</td>
                                             <td>{d.email}</td>
-                                            <td>{d.comment}</td>
+                                            <td >{d.comment}</td>
                                             <td>
                                                 <Link className='btn btn-sm btn-info me-2' to={`/view/${d._id}`}>view</Link>
-                                                <button className='btn btn-sm btn-warning me-2'>Edit</button>
+                                                <Link className='btn btn-sm btn-warning me-2' to={`/edit/${d._id}`}>Edit</Link>
                                                 <button className='btn btn-sm btn-danger' onClick={()=>{Mydeleterecord(d._id)}}>Del</button>
                                             </td>
                                         </tr>
